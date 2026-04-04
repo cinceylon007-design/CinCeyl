@@ -18,8 +18,11 @@ function lerp(a, b, t) {
 }
 
 function valueToHex(v) {
-  const t = v / 100;
-  return lerp('#F5DEB3', '#3E2416', t);
+  if (v <= 50) {
+    return lerp('#F78B24', '#FF4502', v / 50);
+  } else {
+    return lerp('#FF4502', '#713C2A', (v - 50) / 50);
+  }
 }
 
 export default function Step3Sensory({ survey, onChange, onNext, onBack }) {
@@ -40,7 +43,7 @@ export default function Step3Sensory({ survey, onChange, onNext, onBack }) {
 
   const colorHex = survey.colorHex || valueToHex(survey.colorValue);
 
-  const sliderBg = `linear-gradient(90deg, #F5DEB3 0%, #3E2416 100%)`;
+  const sliderBg = `linear-gradient(90deg, #F78B24 0%, #FF4502 50%, #713C2A 100%)`;
 
   return (
     <div className="survey-wrapper">
