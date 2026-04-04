@@ -110,6 +110,7 @@ export default function Step3Sensory({ survey, onChange, onNext, onBack }) {
             max={100}
             value={survey.colorValue}
             onChange={handleColor}
+            className="color-slider"
             style={{
               background: sliderBg,
             }}
