@@ -19,7 +19,7 @@ function lerp(a, b, t) {
 
 function valueToHex(v) {
   const t = v / 100;
-  return lerp('#3E2416', '#F5DEB3', t);
+  return lerp('#F5DEB3', '#3E2416', t);
 }
 
 export default function Step3Sensory({ survey, onChange, onNext, onBack }) {
@@ -40,7 +40,7 @@ export default function Step3Sensory({ survey, onChange, onNext, onBack }) {
 
   const colorHex = survey.colorHex || valueToHex(survey.colorValue);
 
-  const sliderBg = `linear-gradient(90deg, #3E2416 0%, #F5DEB3 100%)`;
+  const sliderBg = `linear-gradient(90deg, #F5DEB3 0%, #3E2416 100%)`;
 
   return (
     <div className="survey-wrapper">
@@ -112,8 +112,8 @@ export default function Step3Sensory({ survey, onChange, onNext, onBack }) {
             }}
           />
           <div className="slider-labels">
-            <span>Darker Brown</span>
-            <span>Lighter Brown</span>
+            <span>Lighter</span>
+            <span>Darker</span>
           </div>
         </div>
 
