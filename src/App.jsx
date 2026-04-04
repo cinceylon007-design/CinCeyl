@@ -30,7 +30,7 @@ const initialSurvey = {
   aromaCharacteristics: [],
   aromaOther: '',
   colorValue: 50,
-  colorHex: '#8B4513',
+  colorHex: '#FF4502',
   healthBenefits: [],
   healthOther: '',
   bottleVolume: '150ml',
