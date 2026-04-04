@@ -33,7 +33,7 @@ const initialSurvey = {
   colorHex: '#8B4513',
   healthBenefits: [],
   healthOther: '',
-  bottleVolume: '200ml',
+  bottleVolume: '150ml',
   priceExpectation: 'Rs. 250',
   nameFirst: '',
   nameSecond: '',
