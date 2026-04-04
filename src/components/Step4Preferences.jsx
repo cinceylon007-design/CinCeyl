@@ -55,7 +55,7 @@ function getPriceCategory(price) {
 }
 
 export default function Step4Preferences({ survey, onChange, onNext, onBack }) {
-  const volumeSteps = [100, 150, 200, 250, 300, 350, 400, 450];
+  const volumeSteps = [60, 100, 150, 200, 250, 300, 350, 400];
   const priceSteps = [200, 250, 300, 350, 400, 450, 500, 550, 600];
 
   const volumeIdx = volumeSteps.indexOf(parseInt(survey.bottleVolume, 10));
@@ -121,13 +121,13 @@ export default function Step4Preferences({ survey, onChange, onNext, onBack }) {
           type="range"
           min={0}
           max={volumeSteps.length - 1}
-          value={volumeIdx < 0 ? 1 : volumeIdx}
+          value={volumeIdx < 0 ? 0 : volumeIdx}
           onChange={(e) => onChange({ bottleVolume: `${volumeSteps[Number(e.target.value)]}ml` })}
           style={{ background: 'linear-gradient(90deg, var(--cream-dark), var(--cinnamon-pale))' }}
         />
         <div className="slider-labels">
-          <span>100ml</span>
-          <span>450ml</span>
+          <span>60ml</span>
+          <span>400ml</span>
         </div>
 
         <hr className="divider" />
