@@ -2,9 +2,7 @@ import React from 'react';
 import ProgressBar from './ProgressBar.jsx';
 
 const BATCHES = [
-  'Batch MG', 'Batch BN', 'Batch RS', 'Batch PU',
-  'Batch KHG', 'Batch HK', 'Batch TD', 'Batch HL',
-  'Batch HM', 'Batch AB', 'Batch BC', 'Batch CD',
+  'Type A', 'Type B', 'Type C', 'Type D', 'Type E',
 ];
 
 export default function Step1Batch({ batchId, onChange, onNext }) {
