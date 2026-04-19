@@ -8,7 +8,6 @@ const HEALTH_OPTIONS = [
   'Immune Support', 'Energy Boost', 'Natural/Organic Wellness',
 ];
 
-const NAME_OPTIONS = ['CinCeyl', 'CinnaBalance', 'CeyloFresh', 'Cinnamon Shot'];
 
 function BottleSVG({ scale }) {
   const h = 80 + scale * 60;
@@ -63,28 +62,6 @@ export default function Step4Preferences({ survey, onChange, onNext, onBack }) {
   const bottleScale = (volumeIdx < 0 ? 1 : volumeIdx) / (volumeSteps.length - 1);
 
   const priceCategory = getPriceCategory(survey.priceExpectation);
-
-  const selectName = (name, rank) => {
-    if (rank === 1) {
-      if (survey.nameFirst === name) {
-        onChange({ nameFirst: '' });
-      } else {
-        onChange({
-          nameFirst: name,
-          nameSecond: survey.nameSecond === name ? '' : survey.nameSecond,
-        });
-      }
-    } else {
-      if (survey.nameSecond === name) {
-        onChange({ nameSecond: '' });
-      } else {
-        onChange({
-          nameSecond: name,
-          nameFirst: survey.nameFirst === name ? '' : survey.nameFirst,
-        });
-      }
-    }
-  };
 
   return (
     <div className="survey-wrapper">
@@ -151,65 +128,6 @@ export default function Step4Preferences({ survey, onChange, onNext, onBack }) {
         <div className="slider-labels">
           <span>Rs. 200</span>
           <span>Rs. 600</span>
-        </div>
-
-        <hr className="divider" />
-
-        {/* Name Voting */}
-        <div className="section-label">🏷️ Name Voting</div>
-
-        <p style={{ fontSize: '12px', color: 'var(--text-light)', marginBottom: '10px' }}>
-          Select your <strong>1st preference</strong>:
-        </p>
-        <div className="name-grid" style={{ marginBottom: '16px' }}>
-          {NAME_OPTIONS.map((name) => (
-            <button
-              key={name}
-              type="button"
-              className={`name-option ${survey.nameFirst === name ? 'selected-first' : ''} ${
-                survey.nameSecond === name && survey.nameFirst !== name ? 'disabled' : ''
-              }`}
-              onClick={() => selectName(name, 1)}
-              disabled={survey.nameSecond === name && survey.nameFirst !== name}
-            >
-              {name}
-              {survey.nameFirst === name && <span className="name-rank-badge first">1</span>}
-            </button>
-          ))}
-        </div>
-
-        <p style={{ fontSize: '12px', color: 'var(--text-light)', marginBottom: '10px' }}>
-          Select your <strong>2nd preference</strong>:
-        </p>
-        <div className="name-grid">
-          {NAME_OPTIONS.map((name) => (
-            <button
-              key={name}
-              type="button"
-              className={`name-option ${survey.nameSecond === name ? 'selected-second' : ''} ${
-                survey.nameFirst === name && survey.nameSecond !== name ? 'disabled' : ''
-              }`}
-              onClick={() => selectName(name, 2)}
-              disabled={survey.nameFirst === name && survey.nameSecond !== name}
-            >
-              {name}
-              {survey.nameSecond === name && <span className="name-rank-badge second">2</span>}
-            </button>
-          ))}
-        </div>
-
-        {/* Custom Suggestion */}
-        <div className="suggestion-box">
-          <p className="suggestion-label">💡 Or Suggest Your Own Name <span style={{ fontSize: '11px', fontStyle: 'normal', color: 'var(--text-light)' }}>(Optional)</span></p>
-          <input
-            type="text"
-            className="text-input"
-            placeholder="Your creative name idea..."
-            maxLength={50}
-            value={survey.nameCustomSuggestion}
-            onChange={(e) => onChange({ nameCustomSuggestion: e.target.value })}
-          />
-          <div className="char-count">{survey.nameCustomSuggestion.length}/50 characters</div>
         </div>
 
         <div className="btn-row" style={{ marginTop: '28px' }}>
