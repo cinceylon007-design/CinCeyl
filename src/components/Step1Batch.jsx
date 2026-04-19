@@ -12,7 +12,21 @@ export default function Step1Batch({ batchId, onChange, onNext }) {
         <ProgressBar step={1} />
 
         <div className="step-header">
-          <span className="step-icon">📦</span>
+          <img
+            src="/BatchImage.png"
+            alt="Batch"
+            style={{
+              width: '220px',
+              height: '220px',
+              objectFit: 'contain',
+              marginBottom: '12px',
+              borderRadius: '16px',
+              border: '2px solid rgba(201, 169, 97, 0.45)',
+              boxShadow: '0 4px 20px rgba(107, 52, 16, 0.18), 0 1px 0 rgba(255,255,255,0.8) inset',
+              background: 'rgba(255,255,255,0.6)',
+              padding: '8px',
+            }}
+          />
           <h2 className="step-title">Batch Identification</h2>
           <p className="step-subtitle">
             Select the batch code printed on your sample bottle
