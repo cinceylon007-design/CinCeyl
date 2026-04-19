@@ -4,7 +4,7 @@ import ProgressBar from './ProgressBar.jsx';
 const FEATURES = [
   '100% Pure Ceylon Cinnamon',
   'Zero Artificial Ingredients',
-  'Premium 200ml Glass Bottle',
+  'Premium 60ml Glass Bottle',
   'Pasteurized Contents',
   'Research-Driven Extraction Process (Patent Pending)',
 ];
